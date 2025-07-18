@@ -1,0 +1,221 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg: #f5f7fa;
+    --primary: #2c3e50;
+    --accent: #3498db;
+    --border: #e0e6ed;
+    --text: #2c3e50;
+    --error: #e74c3c;
+    --success: #2ecc71;
+}
+
+body {
+    background-size: cover;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+}
+
+.selection {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.selectbutton {
+    height: 60px;
+    width: 300px;
+    border: none;
+    border-radius: 6px;
+    background-color: var(--accent);
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin: 0 auto;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.selectbutton:hover {
+    background-color: #2980b9;
+    transform: translateY(-2px);
+}
+
+h1 {
+    text-align: center;
+    padding-top: 5%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--primary);
+    font-weight: 700;
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+h2 {
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--primary);
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+input {
+    height: 45px;
+    width: 300px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text);
+    margin-bottom: 15px;
+    padding: 0 15px;
+    transition: all 0.3s ease;
+}
+
+input:focus {
+    border-color: var(--accent);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+}
+
+select {
+    height: 45px;
+    width: 300px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text);
+    margin-bottom: 15px;
+    padding: 0 15px;
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%23333' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    padding-right: 30px;
+    transition: all 0.3s ease;
+}
+
+select:focus {
+    border-color: var(--accent);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+}
+
+option {
+    font-weight: 500;
+    padding: 10px;
+}
+
+th {
+    padding: 15px;
+    color: var(--primary);
+    font-weight: 600;
+}
+
+button {
+    border: none;
+    border-radius: 6px;
+    background-color: var(--accent);
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    width: 120px;
+    height: 45px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+.button {
+    text-align: center;
+    margin: 20px 0;
+}
+
+h3 {
+    text-align: center;
+    font-size: 22px;
+    font-weight: 600;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--accent);
+    margin: 10px 0;
+}
+
+.author {
+    display: flex;
+    justify-content: space-around;
+    margin: 30px 0;
+}
+
+h4 {
+    text-align: center;
+    padding: 15px;
+    color: var(--primary);
+    font-size: 16px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 600;
+}
+
+h5 {
+    color: var(--primary);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.img {
+    text-align: center;
+    margin: 20px 0;
+}
+
+section {
+    max-width: 1000px;
+    width: 100%;
+    background-color: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+}
+
+a {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+a:hover {
+    color: #2980b9;
+    text-decoration: underline;
+}
+
+@media screen and (max-width: 768px) {
+    section {
+        padding: 20px;
+    }
+    
+    .selectbutton {
+        width: 100%;
+    }
+    
+    input, select {
+        width: 100%;
+    }
+}

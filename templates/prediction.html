@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI ANESTHESIOLOGIST | Surgery Selection</title>
+    <link rel="icon" href="symbol.png" type="image/x-icon">
+    <link rel="stylesheet" href="main.css">
+    <style>
+        .surgery-options {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin-top: 40px;
+        }
+        
+        .surgery-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+        
+        .surgery-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+            border-color: var(--accent);
+        }
+        
+        .surgery-icon {
+            background-color: rgba(52, 152, 219, 0.1);
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+        }
+        
+        .surgery-icon img {
+            width: 30px;
+            height: 30px;
+        }
+        
+        .surgery-details {
+            flex: 1;
+        }
+        
+        .surgery-title {
+            color: var(--primary);
+            font-size: 18px;
+            font-weight: 600;
+            margin: 0 0 5px 0;
+        }
+        
+        .surgery-description {
+            color: #7f8c8d;
+            font-size: 14px;
+            margin: 0;
+        }
+        
+        .surgery-arrow {
+            color: var(--accent);
+            font-size: 24px;
+            margin-left: 10px;
+        }
+        
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+        
+        .back-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <div>
+            <h1>AI ANESTHESIOLOGIST</h1>
+            <h2 style="color: var(--accent);">Surgery Type Selection</h2>
+        </div>
+        
+        <p style="text-align: center;">
+            <img src="symbol.png" alt="AI ANESTHESIOLOGIST" style="height: 80px; margin-bottom: 20px;">
+        </p>
+
+        <div class="surgery-options">
+            <a href="generalprediction.html" class="surgery-card">
+                <div class="surgery-icon">
+                    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMzQ5OGRiIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgY2xhc3M9ImZlYXRoZXIgZmVhdGhlci1hY3Rpdml0eSI+PHBvbHlsaW5lIHBvaW50cz0iMjIgMTIgMTggMTIgMTUgMjEgOSAzIDYgMTIgMiAxMiI+PC9wb2x5bGluZT48L3N2Zz4=" alt="General Surgery">
+                </div>
+                <div class="surgery-details">
+                    <h3 class="surgery-title">GENERAL SURGERY</h3>
+                    <p class="surgery-description">For procedures requiring total unconsciousness and muscle relaxation</p>
+                </div>
+                <div class="surgery-arrow">›</div>
+            </a>
+            
+            <a href="spinalprediction.html" class="surgery-card">
+                <div class="surgery-icon">
+                    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMzQ5OGRiIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgY2xhc3M9ImZlYXRoZXIgZmVhdGhlci1hbGVydC1jaXJjbGUiPjxjaXJjbGUgY3g9IjEyIiBjeT0iMTIiIHI9IjEwIj48L2NpcmNsZT48bGluZSB4MT0iMTIiIHkxPSI4IiB4Mj0iMTIiIHkyPSIxMiI+PC9saW5lPjxsaW5lIHgxPSIxMiIgeTE9IjE2IiB4Mj0iMTIuMDEiIHkyPSIxNiI+PC9saW5lPjwvc3ZnPg==" alt="Spinal Surgery">
+                </div>
+                <div class="surgery-details">
+                    <h3 class="surgery-title">SPINAL SURGERY</h3>
+                    <p class="surgery-description">For procedures requiring regional anesthesia via the spinal cord</p>
+                </div>
+                <div class="surgery-arrow">›</div>
+            </a>
+            
+            <a href="localprediction.html" class="surgery-card">
+                <div class="surgery-icon">
+                    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMzQ5OGRiIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgY2xhc3M9ImZlYXRoZXIgZmVhdGhlci1jaXJjbGUiPjxjaXJjbGUgY3g9IjEyIiBjeT0iMTIiIHI9IjEwIj48L2NpcmNsZT48Y2lyY2xlIGN4PSIxMiIgY3k9IjEyIiByPSIzIj48L2NpcmNsZT48L3N2Zz4=" alt="Local Surgery">
+                </div>
+                <div class="surgery-details">
+                    <h3 class="surgery-title">LOCAL SURGERY</h3>
+                    <p class="surgery-description">For minor procedures requiring targeted anesthesia in a specific area</p>
+                </div>
+                <div class="surgery-arrow">›</div>
+            </a>
+        </div>
+        
+        <div style="margin-top: 30px; text-align: center;">
+            <a href="javascript:history.back()" class="back-link">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 5px;"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                Back to Dashboard
+            </a>
+        </div>
+        
+        <div style="text-align: center; margin-top: 40px; color: #7f8c8d;">
+            <p>© 2025 AI ANESTHESIOLOGIST | All Rights Reserved</p>
+        </div>
+    </section>
+</body>
+</html>

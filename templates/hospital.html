@@ -1,0 +1,167 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI ANESTHESIOLOGIST | Dashboard</title>
+    <link rel="icon" href="{% static 'symbol.png' %}" type="image/x-icon">
+    <link rel="stylesheet" href="{% static 'main.css' %}">
+    <style>
+        .dashboard-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .user-info {
+            display: flex;
+            align-items: center;
+        }
+        
+        .user-info img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+            background-color: var(--accent);
+            padding: 5px;
+        }
+        
+        .logout-link {
+            background-color: transparent;
+            border: 1px solid var(--accent);
+            color: var(--accent);
+            font-size: 14px;
+            padding: 8px 15px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        
+        .logout-link:hover {
+            background-color: var(--accent);
+            color: white;
+            text-decoration: none;
+        }
+        
+        .dashboard-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+            text-align: center;
+        }
+        
+        .action-button {
+            display: inline-block;
+            background-color: var(--accent);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            margin-top: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .action-button:hover {
+            background-color: #2980b9;
+            transform: translateY(-2px);
+            text-decoration: none;
+        }
+        
+        .hospital-stats {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+        
+        .stat-box {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 30%;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .stat-number {
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--accent);
+            margin: 10px 0;
+        }
+        
+        .stat-label {
+            color: var(--primary);
+            font-weight: 500;
+        }
+        
+        @media screen and (max-width: 768px) {
+            .stat-box {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section>
+        {% if user.is_authenticated %}
+        <div class="dashboard-header">
+            <div class="user-info">
+                <img src="{% static 'symbol.png' %}" alt="Hospital Icon">
+                <h2 style="margin: 0;">{{ user.username }}</h2>
+            </div>
+            <a href="out" class="logout-link">Log out</a>
+        </div>
+        
+        <h1>HOSPITAL DASHBOARD</h1>
+        <p style="text-align: center; color: var(--accent); margin-bottom: 30px;">Welcome to the AI Anesthesiologist Platform</p>
+        
+        <div class="dashboard-card">
+            <img src="{% static 'symbol.png' %}" alt="HOSPITAL" style="height: 80px; margin-bottom: 15px;">
+            <h2>Anesthesia Prediction Tool</h2>
+            <p style="color: #7f8c8d; margin: 15px 0;">Access our advanced AI system to predict optimal anesthesia dosage for your patients based on their specific parameters.</p>
+            <a href="{% static 'prediction.html' %}" class="action-button">PREDICT NOW</a>
+        </div>
+        
+        <div class="hospital-stats">
+            <div class="stat-box">
+                <div class="stat-number">0</div>
+                <div class="stat-label">Predictions Made</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number">3</div>
+                <div class="stat-label">Surgery Types</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number">100%</div>
+                <div class="stat-label">Accuracy</div>
+            </div>
+        </div>
+        
+        <div style="text-align: center; margin-top: 40px; color: #7f8c8d;">
+            <p>© 2025 AI ANESTHESIOLOGIST | All Rights Reserved</p>
+        </div>
+        
+        {% else %}
+        <h1>ANESTHESIA DRUG PREDICTION DURING SURGERY</h1>
+        <p style="text-align: center; margin-bottom: 20px;">Please log in to access the hospital dashboard</p>
+        <div style="text-align: center;">
+            <a href="login" class="action-button">LOGIN</a>
+        </div>
+        {% endif %}
+    </section>
+</body>
+</html>
