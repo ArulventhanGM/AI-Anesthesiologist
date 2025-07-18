@@ -1,0 +1,1 @@
+id,username,email,password_hash,salt,hospital_name,hospital_id,license_id,created_at,updated_at,is_active

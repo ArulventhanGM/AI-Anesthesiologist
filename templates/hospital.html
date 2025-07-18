@@ -117,11 +117,11 @@
 </head>
 <body>
     <section>
-        {% if user.is_authenticated %}
+        {% if request.session.is_logged_in %}
         <div class="dashboard-header">
             <div class="user-info">
                 <img src="{% static 'symbol.png' %}" alt="Hospital Icon">
-                <h2 style="margin: 0;">{{ user.username }}</h2>
+                <h2 style="margin: 0;">{{ request.session.hospital_name }}</h2>
             </div>
             <a href="out" class="logout-link">Log out</a>
         </div>

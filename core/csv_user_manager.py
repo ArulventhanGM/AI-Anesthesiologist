@@ -83,19 +83,27 @@ class CSVUserManager:
             if not re.match(email_pattern, data['email']):
                 errors.append("Invalid email format")
         
-        # Check for CSV injection attempts
-        dangerous_chars = ['"', "'", '=', '+', '-', '@', '\t', '\r', '\n']
+        # Check for CSV injection attempts (but allow @ in email)
+        dangerous_chars = ['"', "'", '=', '+', '-', '\t', '\r', '\n']
         for key, value in data.items():
             if isinstance(value, str):
-                # Remove dangerous characters or escape them
-                for char in dangerous_chars:
-                    if char in value:
-                        errors.append(f"Invalid character '{char}' in {key}")
+                # Allow @ in email field, but check other dangerous characters
+                if key == 'email':
+                    # For email, only check for really dangerous characters
+                    email_dangerous_chars = ['"', "'", '=', '+', '\t', '\r', '\n']
+                    for char in email_dangerous_chars:
+                        if char in value:
+                            errors.append(f"Invalid character '{char}' in {key}")
+                else:
+                    # For other fields, check all dangerous characters
+                    for char in dangerous_chars:
+                        if char in value:
+                            errors.append(f"Invalid character '{char}' in {key}")
         
-        # Validate username (alphanumeric and underscore only)
+        # Validate username (allow letters, numbers, underscore, and spaces)
         if data.get('username'):
-            if not re.match(r'^[a-zA-Z0-9_]+$', data['username']):
-                errors.append("Username can only contain letters, numbers, and underscores")
+            if not re.match(r'^[a-zA-Z0-9_\s]+$', data['username']):
+                errors.append("Username can only contain letters, numbers, underscores, and spaces")
         
         return errors
     

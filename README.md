@@ -177,10 +177,10 @@ To contribute to this project:
 
 ## Authors
 
-- ELANESAN K
-- PRITHEEVE D
-- DEO ALESTER S
-- ARUN KUMAR S
-- KAAVIYA R
+- [Your Name](https://github.com/yourusername)
+- [Contributor Name](https://github.com/contributorusername)
 
-Students, Department of Artificial Intelligence and Machine Learning, KRCE-TRICHY
+## Acknowledgments  
+
+- Special thanks to [Contributor Name](https://github.com/contributorusername) for their contributions to this project.
+- We acknowledge the use of [Django](https://www.djangoproject.com/) and [Python](https://www.python.org/) in this project.
