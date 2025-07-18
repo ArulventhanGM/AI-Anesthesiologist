@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile - AI Anesthesiologist</title>
+    <link rel="stylesheet" href="{% load static %}{% static 'main.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>User Profile</h1>
+        
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert alert-{{ message.tags }}">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endif %}
+        
+        <div class="profile-section">
+            <h2>Profile Information</h2>
+            <div class="profile-info">
+                <p><strong>Username:</strong> {{ user.username }}</p>
+                <p><strong>Email:</strong> {{ user.email }}</p>
+                <p><strong>Hospital Name:</strong> {{ user.hospital_name }}</p>
+                <p><strong>Hospital ID:</strong> {{ user.hospital_id }}</p>
+                <p><strong>License ID:</strong> {{ user.license_id }}</p>
+                <p><strong>Member Since:</strong> {{ user.created_at|date:"M d, Y" }}</p>
+                <p><strong>Last Updated:</strong> {{ user.updated_at|date:"M d, Y H:i" }}</p>
+            </div>
+        </div>
+        
+        <div class="update-section">
+            <h2>Update Profile</h2>
+            <form method="post" action="{% url 'update_profile' %}">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="hospital_name">Hospital Name:</label>
+                    <input type="text" id="hospital_name" name="hospital_name" 
+                           value="{{ user.hospital_name }}" placeholder="Enter hospital name">
+                </div>
+                
+                <div class="form-group">
+                    <label for="hospital_id">Hospital ID:</label>
+                    <input type="text" id="hospital_id" name="hospital_id" 
+                           value="{{ user.hospital_id }}" placeholder="Enter hospital ID">
+                </div>
+                
+                <div class="form-group">
+                    <label for="email_id">Email:</label>
+                    <input type="email" id="email_id" name="email_id" 
+                           value="{{ user.email }}" placeholder="Enter email">
+                </div>
+                
+                <div class="form-group">
+                    <label for="new_password">New Password (leave blank to keep current):</label>
+                    <input type="password" id="new_password" name="new_password" 
+                           placeholder="Enter new password">
+                </div>
+                
+                <button type="submit" class="btn btn-primary">Update Profile</button>
+            </form>
+        </div>
+        
+        <div class="navigation">
+            <a href="{% url 'hos' %}" class="btn btn-secondary">Back to Dashboard</a>
+            <a href="{% url 'out' %}" class="btn btn-danger">Logout</a>
+        </div>
+    </div>
+</body>
+</html>
